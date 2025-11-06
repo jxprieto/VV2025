@@ -11,13 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
-    private Player player;
-
-    @BeforeEach
-    void setUp() {
-        player = new Player();
-    }
-
     @Test
     void shouldCreatePlayerInCorrectPosition() {
         Player player = new Player();
@@ -27,7 +20,12 @@ class PlayerTest {
 
     @Nested
     class PlayerActTest {
+        private Player player;
 
+        @BeforeEach
+        void setUp() {
+            player = new Player();
+        }
         @Test
         void shouldActToRight() {
             var x = player.getX();
