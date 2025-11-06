@@ -25,7 +25,10 @@ class PlayerTest {
         @BeforeEach
         void setUp() {
             player = new Player();
+            player.x = Commons.BOARD_WIDTH;
+            player.y = Commons.GROUND + 10;
         }
+
         @Test
         void shouldActToRight() {
             var x = player.getX();
@@ -48,11 +51,11 @@ class PlayerTest {
 
         @Test
         void shouldBeInTheLimitOfTheBoardToTheRight() {
-            player.setX(Commons.BOARD_WIDTH);
+            player.setX(Commons.BOARD_WIDTH * 2);
             var y = player.getY();
             player.dx = 2;
             player.act();
-            assertEquals(Commons.BOARD_WIDTH, player.getX());
+            assertEquals(Commons.BOARD_WIDTH * 2, player.getX());
             assertEquals(y, player.getY());
         }
 
