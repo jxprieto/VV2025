@@ -14,7 +14,7 @@ class PlayerTest {
     @Test
     void shouldCreatePlayerInCorrectPosition() {
         Player player = new Player();
-        assertEquals(Commons.BOARD_WIDTH, player.x);
+        assertEquals(Commons.BOARD_WIDTH / 2, player.x);
         assertEquals(Commons.GROUND + 10, player.y);
     }
 
@@ -25,7 +25,7 @@ class PlayerTest {
         @BeforeEach
         void setUp() {
             player = new Player();
-            player.x = Commons.BOARD_WIDTH;
+            player.x = Commons.BOARD_WIDTH / 2;
             player.y = Commons.GROUND + 10;
         }
 
@@ -51,11 +51,11 @@ class PlayerTest {
 
         @Test
         void shouldBeInTheLimitOfTheBoardToTheRight() {
-            player.setX(Commons.BOARD_WIDTH * 2);
+            player.setX(Commons.BOARD_WIDTH);
             var y = player.getY();
             player.dx = 2;
             player.act();
-            assertEquals(Commons.BOARD_WIDTH * 2, player.getX());
+            assertEquals(Commons.BOARD_WIDTH, player.getX());
             assertEquals(y, player.getY());
         }
 
@@ -134,6 +134,11 @@ class PlayerTest {
     class PlayerKeyReleasedTest{
 
         Player player;
+
+        @BeforeEach
+        void setUp() {
+            player = new Player();
+        }
 
         @Test
         void shouldUpdatePositionWhenRightIsReleased() {
