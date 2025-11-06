@@ -109,6 +109,7 @@ class PlayerTest {
             player.keyPressed(rightKeyEvent);
             assertEquals(2, player.dx);
         }
+
         @Test
         void shouldNotUpdateIfKeyIsNotRightNorLeft() {
             var previous = player.dx;
@@ -117,7 +118,7 @@ class PlayerTest {
         }
 
         private static KeyEvent getKeyEvent(int vkRight) {
-            KeyEvent rightKeyEvent = new KeyEvent(
+            return new KeyEvent(
                     new java.awt.Canvas(),
                     KeyEvent.KEY_PRESSED,
                     System.currentTimeMillis(),
@@ -125,7 +126,6 @@ class PlayerTest {
                     vkRight,
                     KeyEvent.CHAR_UNDEFINED
             );
-            return rightKeyEvent;
         }
     }
 
@@ -159,9 +159,8 @@ class PlayerTest {
         }
 
 
-
         private static KeyEvent getKeyEvent(int vkRight) {
-            KeyEvent rightKeyEvent = new KeyEvent(
+            return new KeyEvent(
                     new java.awt.Canvas(),
                     KeyEvent.KEY_RELEASED,
                     System.currentTimeMillis(),
@@ -169,7 +168,6 @@ class PlayerTest {
                     vkRight,
                     KeyEvent.CHAR_UNDEFINED
             );
-            return rightKeyEvent;
         }
     }
 
