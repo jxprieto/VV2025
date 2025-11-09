@@ -118,13 +118,13 @@ class PlayerTest {
             assertEquals(previous, player.dx);
         }
 
-        private static KeyEvent getKeyEvent(int vkRight) {
+        private static KeyEvent getKeyEvent(int pressedKey) {
             return new KeyEvent(
                     new java.awt.Canvas(),
                     KeyEvent.KEY_PRESSED,
                     System.currentTimeMillis(),
                     0,
-                    vkRight,
+                    pressedKey,
                     KeyEvent.CHAR_UNDEFINED
             );
         }
@@ -165,13 +165,13 @@ class PlayerTest {
         }
 
 
-        private static KeyEvent getKeyEvent(int vkRight) {
+        private static KeyEvent getKeyEvent(int releasedKey) {
             return new KeyEvent(
                     new java.awt.Canvas(),
                     KeyEvent.KEY_RELEASED,
                     System.currentTimeMillis(),
                     0,
-                    vkRight,
+                    releasedKey,
                     KeyEvent.CHAR_UNDEFINED
             );
         }
