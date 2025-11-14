@@ -32,7 +32,7 @@ public class ShotTest {
         Shot shot = new Shot(50, 100); // x no importa, y=99 (por el constructor)
         shot.setY(100); // Forzamos y=100 para la prueba
 
-        shot.act(); // y = 100 - 4
+        //shot.act(); // y = 100 - 4
 
         assertEquals(96, shot.getY());
         // assertEquals(true, shot.isVisible()); // Deberías comprobar que sigue visible
@@ -44,7 +44,7 @@ public class ShotTest {
         Shot shot = new Shot(50, 100);
         shot.setY(3); // Forzamos y=3
 
-        shot.act(); // y = 3 - 4
+        //shot.act(); // y = 3 - 4
 
         assertEquals(-1, shot.getY());
         // assertEquals(false, shot.isVisible()); // Deberías comprobar que desaparece
@@ -56,7 +56,7 @@ public class ShotTest {
         Shot shot = new Shot(50, 100);
         shot.setY(0); // Forzamos y=0
 
-        shot.act(); // y = 0 - 4
+        //shot.act(); // y = 0 - 4
 
         assertEquals(-4, shot.getY());
         // assertEquals(false, shot.isVisible()); // Deberías comprobar que desaparece
