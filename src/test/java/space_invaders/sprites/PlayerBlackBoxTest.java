@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlayerTest {
+class PlayerBlackBoxTest {
 
     @Test
     void shouldCreatePlayerInCorrectPosition() {
